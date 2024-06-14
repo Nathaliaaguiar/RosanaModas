@@ -1,0 +1,338 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* Estilo para o contêiner geral */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background: #f5e5e4;
+    color: #333;
+    padding: 20px 0;
+    border-bottom: #bd978b 3px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #bd978b;
+}
+
+/* Estilo para o formulário de cadastro */
+form {
+    background: #f5e5e4;
+    padding: 20px;
+    border-bottom: #bd978b 3px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    background-color: #bd978b;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #a77d71;
+}header nav {
+    margin-top: 10px;
+}
+
+.hero {
+    background: linear-gradient(90deg, rgba(245, 229, 228, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #bd978b;
+}
+
+.hero p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.hero .btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #bd978b;
+}
+
+.features,
+.products {
+    padding: 60px 0;
+}
+
+.features h3,
+.products h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #bd978b;
+}
+
+.feature-item,
+.product-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover,
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h4,
+.product-card h4 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #bd978b;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-card .price {
+    color: #333;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-card .btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.product-card .btn:hover {
+    background: #bd978b;
+}
+
+.size-selector {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #bd978b;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+.size-selector:focus {
+    border-color: #333;
+    outline: none;
+}
+
+footer {
+    background: #f5e5e4;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    border-top: #bd978b 3px solid;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.cart-item div {
+    flex-grow: 1;
+}
+
+.cart-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.cart-item .remove-btn {
+    background: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.cart-item .remove-btn:hover {
+    background: #ff1c1c;
+}
+
+#cart-total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: right;
+}
+
+#checkout-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+#checkout-btn:hover {
+    background: #bd978b;
+}
