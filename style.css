@@ -194,7 +194,7 @@ form input[type="submit"]:hover {
 }
 
 .product-card .btn {
-    background: #333;
+    background: #a77d71;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -269,7 +269,7 @@ footer p {
 
 .close-btn:hover,
 .close-btn:focus {
-    color: #333;
+    color: #a77d71;
     text-decoration: none;
     cursor: pointer;
 }
@@ -323,7 +323,7 @@ footer p {
 }
 
 #checkout-btn {
-    background: #333;
+    background: #a77d71;
     color: white;
     border: none;
     padding: 10px 20px;
