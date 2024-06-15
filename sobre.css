@@ -1,0 +1,158 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* Estilo para o contêiner geral */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background: #f5e5e4;
+    color: #333;
+    padding: 20px 0;
+    border-bottom: #bd978b 3px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #bd978b;
+}
+
+/* Estilo para a seção sobre */
+.about {
+    padding: 60px 0;
+    background-color: #f5e5e4;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #bd978b;
+}
+
+.about p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Estilo para a equipe */
+.team {
+    padding: 60px 0;
+    background-color: #f9f6f5;
+    text-align: center;
+}
+
+.team h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #bd978b;
+}
+
+.team-member {
+    margin-bottom: 40px;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h4 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background: #f5e5e4;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    border-top: #bd978b 3px solid;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Estilos para os ícones das redes sociais */
+.social-icons {
+    margin-top: 20px; /* Ajuste conforme necessário */
+    text-align: center; /* Centraliza os ícones horizontalmente */
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    font-size: 24px; /* Tamanho dos ícones - ajuste conforme necessário */
+    color: #333; /* Cor dos ícones */
+    transition: transform 0.3s ease-out; /* Efeito de transição suave */
+}
+
+/* Efeito de hover para os ícones */
+.social-icon:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+}
+
+/* Estilo para o logo */
+.logo {
+    max-width: 100px; /* Ajuste conforme necessário */
+    height: auto; /* Altura automática para manter a proporção */
+    margin-top: 10px; /* Espaçamento superior */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
