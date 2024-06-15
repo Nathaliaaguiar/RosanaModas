@@ -14,10 +14,10 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="pgs/catalogoPg.php">Produtos</a></li>
+                    <li><a href="cadastroProdutoPg.php">Produtos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="cadastroProdutoPg.php">Login</a></li>
+                    
+                    <li><a href="login.php">Login</a></li>
                     <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>

@@ -14,7 +14,7 @@
             <img src="logo.png" alt="Rosana Modas" class="logo">
             <nav>
                 <ul>
-                    <li><a href="index.php">Início</a></li>
+                    <li><a href="index.html">Início</a></li>
                     
                 </ul>
             </nav>
