@@ -16,6 +16,7 @@
                     <li><a href="index.php">Início</a></li>
                     <li><a href="cadastroProdutoPg.php">Produtos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>

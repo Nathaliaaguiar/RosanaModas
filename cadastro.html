@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Rosana Modas</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Rosana Modas" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.php">Início</a></li>
+                    <li><a href="cadastroProdutoPg.php">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="login">
+        <div class="container">
+            <form id="cadastroForm">
+                <h2>Cadastro</h2>
+                
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <label for="confirm_password">Confirmar Senha:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rosana Modas. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/seuusuario" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://www.twitter.com/seuusuario" class="social-icon" target="_blank">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+                <a href="https://www.instagram.com/seuusuario" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const telefone = document.getElementById('telefone').value;
+            const endereco = document.getElementById('endereco').value;
+
+            const modal = document.getElementById('feedbackModal');
+            const modalMessage = document.getElementById('modalMessage');
+            const span = document.getElementsByClassName('close')[0];
+
+            if (password !== confirmPassword) {
+                modalMessage.textContent = 'As senhas não correspondem!';
+                modalMessage.style.color = 'red';
+                modal.style.display = 'block';
+                return;
+            }
+
+            modalMessage.innerHTML = `Cadastro realizado com sucesso!<br><br>Nome: ${nome}<br>Email: ${email}<br>Telefone: ${telefone}<br>Endereço: ${endereco}`;
+            modalMessage.style.color = 'green';
+            modal.style.display = 'block';
+        });
+
+        // Fecha o modal ao clicar no 'x'
+        document.getElementsByClassName('close')[0].onclick = function() {
+            document.getElementById('feedbackModal').style.display = 'none';
+        }
+
+        // Fecha o modal ao clicar fora da área do modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('feedbackModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
