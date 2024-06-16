@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; // substitua pelo seu servidor
-$username = "root"; // substitua pelo seu usuário
-$password = ""; // substitua pela sua senha
-$dbname = "db_rosanamodas"; // substitua pelo nome do seu banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_rosanamodas";
 
 // Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,9 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Processo de upload de imagem
     $image = $_FILES['image']['name'];
-    $target = "../images/" . basename($image);
+    $target_dir = "images/";
+    $target_file = $target_dir . basename($image);
 
-    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+    // Verificar se o diretório existe, se não, criar
+    if (!file_exists($target_dir)) {
+        mkdir($target_dir, 0777, true);
+    }
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
         // Usar prepared statement para evitar SQL injection
         $stmt = $conn->prepare("INSERT INTO products (name, description, price, image, size) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("ssdss", $name, $description, $price, $image, $size);

@@ -13,7 +13,7 @@
             <img src="logo.png" alt="Rosana Modas" class="logo">
             <nav>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.php">Início</a></li>
                     <li><a href="cadastroProdutoPg.php">Produtos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     

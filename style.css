@@ -145,7 +145,6 @@ form input[type="submit"]:hover {
 .hero .btn:hover {
     background: #bd978b;
 }
-
 .features,
 .products {
     padding: 60px 0;
@@ -159,14 +158,40 @@ form input[type="submit"]:hover {
     color: #bd978b;
 }
 
+/* Estilo para os itens de recursos e cartões de produtos */
 .feature-item,
 .product-card {
     background: #fff;
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+}
+
+/* Definindo largura dos cartões de produtos */
+.product-card {
+    box-sizing: border-box;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para a imagem do produto */
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
 }
 
 .feature-item:hover,
@@ -180,11 +205,6 @@ form input[type="submit"]:hover {
     margin-top: 0;
     font-size: 1.5em;
     color: #bd978b;
-}
-
-.product-card img {
-    max-width: 100%;
-    border-radius: 8px;
 }
 
 .product-card .price {

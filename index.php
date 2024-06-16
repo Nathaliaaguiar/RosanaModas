@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rosana Modas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-o7ATnrIQFTTb3r69f89wY7KInx2G1z64ZXXPe98ghO6lMPmwv4OWCmLlIvUfY1Y7BZsR2N98mL5Nnv4ef3OkOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <header>
         <div class="container">
             <img src="logo.png" alt="Rosana Modas" class="logo">
             <nav>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.php">Início</a></li>
                     <li><a href="cadastroProdutoPg.php">Produtos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    
                     <li><a href="login.php">Login</a></li>
                     <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
@@ -29,40 +29,43 @@
         <div class="container">
             <h2>Moda de Qualidade e Estilo</h2>
             <p>Explore nossa coleção e encontre o look perfeito para você!</p>
-            <a href="catalogoPg.php" class="btn">Ver Coleção</a>
+            <a href="#cards" class="btn">Ver Coleção</a>
         </div>
     </section>
 
     <section class="products">
         <div class="container">
             <h3>Nossos Produtos</h3>
-              <?php
-            // Conexão com o banco de dados
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "db_rosanamodas";
+            <div class="cards" id="cards">
 
-            // Criar conexão
-            $conn = new mysqli($servername, $username, $password, $dbname);
 
-            // Verificar conexão
-            if ($conn->connect_error) {
-                die("Falha na conexão: " . $conn->connect_error);
-            }
+                <?php
+                // Conexão com o banco de dados
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "db_rosanamodas";
 
-            $sql = "SELECT * FROM products";
-            $result = $conn->query($sql);
+                // Criar conexão
+                $conn = new mysqli($servername, $username, $password, $dbname);
 
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "
+                // Verificar conexão
+                if ($conn->connect_error) {
+                    die("Falha na conexão: " . $conn->connect_error);
+                }
+
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "
                     <div class='product-card'>
-                        <img src='images/" . $row['image'] . "' alt='" . $row['name'] . "'>
-                        <h4>" . $row['name'] . "</h4>
-                        <p>" . $row['description'] . "</p>
-                        <p class='price'>$" . $row['price'] . "</p>
-                        <label for='size-selector'>Tamanho: " . $row['size'] . "</label>
+                        <img src='images/" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "'>
+                        <h4>" . htmlspecialchars($row['name']) . "</h4>
+                        <p>" . htmlspecialchars($row['description']) . "</p>
+                        <p class='price'>$" . htmlspecialchars($row['price']) . "</p>
+                        <label for='size-selector'>Tamanho:</label>
                         <select class='size-selector'>
                             <option value='36'>36</option>
                             <option value='38'>38</option>
@@ -72,13 +75,14 @@
                         </select>
                         <button class='btn buy-btn'>Comprar</button>
                     </div>";
+                    }
+                } else {
+                    echo "<p>Sem produtos disponíveis.</p>";
                 }
-            } else {
-                echo "<p>Sem produtos disponíveis.</p>";
-            }
 
-            $conn->close();
-            ?>
+                $conn->close();
+                ?>
+            </div>
         </div>
     </section>
 
@@ -112,4 +116,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
