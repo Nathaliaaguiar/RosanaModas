@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $conn->real_escape_string($_POST['name']);
     $description = $conn->real_escape_string($_POST['description']);
     $price = $conn->real_escape_string($_POST['price']);
-    $size = $conn->real_escape_string($_POST['size']);
 
     // Processo de upload de imagem
     $image = $_FILES['image']['name'];
@@ -30,11 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
         // Usar prepared statement para evitar SQL injection
-        $stmt = $conn->prepare("INSERT INTO products (name, description, price, image, size) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssdss", $name, $description, $price, $image, $size);
+        $stmt = $conn->prepare("INSERT INTO products (name, description, price, image) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssds", $name, $description, $price, $image);
 
         if ($stmt->execute()) {
-            echo "Produto cadastrado com sucesso!";
+            echo "<script>
+                    alert('Produto cadastrado com sucesso!');
+                    window.location.href = 'index.php';
+                  </script>";
         } else {
             echo "Erro: " . $stmt->error;
         }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -37,8 +35,6 @@
         <div class="container">
             <h3>Nossos Produtos</h3>
             <div class="cards" id="cards">
-
-
                 <?php
                 // Conexão com o banco de dados
                 $servername = "localhost";
@@ -60,25 +56,26 @@
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "
-                    <div class='product-card'>
-                        <img src='images/" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "'>
-                        <h4>" . htmlspecialchars($row['name']) . "</h4>
-                        <p>" . htmlspecialchars($row['description']) . "</p>
-                        <p class='price'>$" . htmlspecialchars($row['price']) . "</p>
-                        <label for='size-selector'>Tamanho:</label>
-                        <select class='size-selector'>
-                            <option value='36'>36</option>
-                            <option value='38'>38</option>
-                            <option value='40'>40</option>
-                            <option value='42'>42</option>
-                            <option value='44'>44</option>
-                              <option value='46'>46</option>
+                        <div class='product-card'>
+                            <img src='images/" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "'>
+                            <h4>" . htmlspecialchars($row['name']) . "</h4>
+                            <p>" . htmlspecialchars($row['description']) . "</p>
+                            <p class='price'>$" . htmlspecialchars($row['price']) . "</p>
+                            <label for='size-selector'>Tamanho:</label>
+                            <select class='size-selector'>
+    <option value='selecionar'>selecionar</option>
+                                <option value='36'>36</option>
+                                <option value='38'>38</option>
+                                <option value='40'>40</option>
+                                <option value='42'>42</option>
+                                <option value='44'>44</option>
+                                <option value='46'>46</option>
                                 <option value='48'>48</option>
-                                  <option value='50'>50</option>
-                                    <option value='52'>52</option>
-                        </select>
-                        <button class='btn buy-btn'>Comprar</button>
-                    </div>";
+                                <option value='50'>50</option>
+                                <option value='52'>52</option>
+                            </select>
+                            <button class='btn buy-btn'>Comprar</button>
+                        </div>";
                     }
                 } else {
                     echo "<p>Sem produtos disponíveis.</p>";
@@ -119,6 +116,21 @@
     </div>
 
     <script src="script.js"></script>
-</body>
+    <script>
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            // Limpar os itens do carrinho
+            document.getElementById('cart-items').innerHTML = '';
+            document.getElementById('cart-total').innerHTML = '<h3>Total: $0.00</h3>';
+            
+            // Exibir mensagem de confirmação
+            const confirmationMessage = document.createElement('p');
+            confirmationMessage.textContent = 'Compra finalizada com sucesso!';
+            confirmationMessage.style.color = 'green';
+            document.querySelector('.modal-content').appendChild(confirmationMessage);
 
+            // Remover o botão "Finalizar Compra"
+            document.getElementById('checkout-btn').style.display = 'none';
+        });
+    </script>
+</body>
 </html>
