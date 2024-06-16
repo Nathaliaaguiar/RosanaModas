@@ -36,13 +36,17 @@
     <section class="products">
         <div class="container">
             <h3>Nossos Produtos</h3>
-            <?php
-            $servername = "localhost"; // substitua pelo seu servidor
-            $username = "root"; // substitua pelo seu usuário
-            $password = ""; // substitua pela sua senha
-            $dbname = "loja"; // substitua pelo nome do seu banco de dados
+              <?php
+            // Conexão com o banco de dados
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "db_rosanamodas";
 
+            // Criar conexão
             $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Verificar conexão
             if ($conn->connect_error) {
                 die("Falha na conexão: " . $conn->connect_error);
             }
