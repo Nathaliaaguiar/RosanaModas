@@ -72,6 +72,10 @@
                             <option value='40'>40</option>
                             <option value='42'>42</option>
                             <option value='44'>44</option>
+                              <option value='46'>46</option>
+                                <option value='48'>48</option>
+                                  <option value='50'>50</option>
+                                    <option value='52'>52</option>
                         </select>
                         <button class='btn buy-btn'>Comprar</button>
                     </div>";
