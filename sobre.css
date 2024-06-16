@@ -57,7 +57,9 @@ header nav ul li a {
     font-size: 16px;
     transition: color 0.3s ease;
 }
-
+header nav {
+    margin-top: 10px;
+}
 header nav ul li a:hover {
     color: #bd978b;
 }

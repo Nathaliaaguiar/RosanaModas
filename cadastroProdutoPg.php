@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="container">
-            <img src="logo.png" alt="Rosana Modas" class="logo">
+            <a href="index.php">
+                <img src="logo.png" alt="Rosana Modas" class="logo">
+            </a>
             <nav>
                 <ul>
                     <li><a href="index.php">Início</a></li>
                     <li><a href="cadastroProdutoPg.php">Produtos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-    <div class="container">
-        <h2>Cadastrar Novo Produto</h2>
+
+    <div class="container" id="container">
+
         <form action="processaCadastro.php" method="POST" enctype="multipart/form-data">
+            <h2>Cadastrar Novo Produto</h2>
             <label for="name">Nome do Produto:</label>
             <input type="text" id="name" name="name" required>
 
@@ -59,4 +65,5 @@
         </div>
     </footer>
 </body>
+
 </html>

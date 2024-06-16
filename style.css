@@ -15,11 +15,14 @@ body {
 
 /* Estilo para o contêiner geral */
 .container {
+   
     width: 80%;
     margin: auto;
     overflow: hidden;
 }
-
+#container{
+    padding: 50px;
+}
 /* Estilo para o cabeçalho */
 header {
     background: #f5e5e4;
@@ -72,8 +75,9 @@ form {
 
 form h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #bd978b;
     font-size: 1.8em;
+    text-align: center;
 }
 
 form label {

@@ -10,7 +10,9 @@
 <body>
     <header>
         <div class="container">
+        <a href="index.php">
             <img src="logo.png" alt="Rosana Modas" class="logo">
+        </a>
             <nav>
                 <ul>
                     <li><a href="index.php">Início</a></li>
